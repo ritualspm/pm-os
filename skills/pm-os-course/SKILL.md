@@ -2,7 +2,7 @@
 name: PM OS Course
 description: The self-paced, interactive AI-Native PM Operating System course and assessment, by ProductVoyagers. Presents one scenario question at a time, the student selects an answer, you grade and deliver a pre-written authoritative explanation, and you SAVE progress to a file in the folder after every answer so the student can stop and resume. Ends in a hands-on capstone and a pass/certificate. Use when a student says "start the course", "pm-os course", "assess me", or runs /pm-os-course.
 icon: 🎓
-version: 0.3.0
+version: 0.4.0
 ---
 
 # PM OS Course — the AI-Native PM Operating System
@@ -28,7 +28,7 @@ This course is run with many students. Every one must get the **same, correct** 
 
 ## How to run it
 
-1. **One question at a time, always.** Present a single question with each lettered option on its own line, then stop and wait. Never show the whole quiz at once. Invite them to **pick an option** — they reply with the letter (A/B/C/D), or click it if their app shows the options as choices.
+1. **One question at a time, as a tap-to-select choice.** Ask each question using an **interactive single-select prompt** — the kind the student answers by tapping one option — so the four options render as selectable choices, not plain text. Present only one question, then wait for their selection. **Only if** your environment cannot render interactive choices, fall back to plain text with each lettered option (A/B/C/D) on its own line and ask them to reply with the letter. Never show more than one question at a time.
 2. **Accept loose answers** — "B", "the second one", or the answer text. If ambiguous, ask them to pick a letter.
 3. **Grade immediately**, then deliver the written explanation for that question.
 4. **Save progress after every answer** — see "Progress & resume" below. This is mandatory, not optional: the student must be able to stop and come back.
