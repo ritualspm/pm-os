@@ -108,5 +108,5 @@ Then, in a session, type **`/`** to see the seats and the course, or just ask:
 
 ## Author & license
 
-Built and maintained by **rituals.pm** · awafaey0@gmail.com
+Built and maintained by **rituals.pm** · team@rituals.pm
 Licensed under **Apache-2.0**.
