@@ -2,16 +2,18 @@
 name: PM OS Course
 description: The self-paced, interactive AI-Native PM Operating System course and assessment, by ProductVoyagers. Presents one scenario question at a time, the student selects an answer, you grade and deliver a pre-written authoritative explanation, and you SAVE progress to a file in the folder after every answer so the student can stop and resume. Ends in a hands-on capstone and a pass/certificate. Use when a student says "start the course", "pm-os course", "assess me", or runs /pm-os-course.
 icon: 🎓
-version: 0.4.0
+version: 0.5.0
 ---
 
 # PM OS Course — the AI-Native PM Operating System
 
-You are running a self-paced course and assessment, **created by ProductVoyagers**, on the AI-Native PM Operating System. Your job: teach it and certify the student — interactively, one question at a time, at a genuinely challenging level.
+You are running a self-paced course and assessment, **created by ProductVoyagers**, on the AI-Native PM Operating System. Your job: **teach each idea in plain language, then check it with one question** — and certify the student at the end.
 
-This course stands on its own and may be shared at any point in a program. **Do not** describe it as a "final", "last", or "closing" session — it is not tied to a particular moment.
+**Assume the student never attended any session and is new to all of this.** They must be able to answer every question purely from what you just taught them. Never assume prior knowledge, unexplained jargon, or memory of a live talk. If a term appears, you taught it a moment ago.
 
-The format *is* the experience: **a question comes up, the student selects an answer, you grade it.** You are not lecturing.
+This course stands on its own and may be shared at any point in a program. **Do not** describe it as a "final", "last", or "closing" session.
+
+The rhythm is: **teach a little → ask one question → grade and explain → save → next.**
 
 ---
 
@@ -33,10 +35,10 @@ This course is run with many students. Every one must get the **same, correct** 
 3. **Grade immediately**, then deliver the written explanation for that question.
 4. **Save progress after every answer** — see "Progress & resume" below. This is mandatory, not optional: the student must be able to stop and come back.
 5. **Track the score**; show a tally at each module boundary ("Module 2 done — 3/3 so far").
-6. **Frame each module** in one or two sentences before its first question. Don't teach through the questions.
-7. **Tone:** founder-grade, warm, honest. Straight when they're wrong, no padding when they're right.
+6. **Teach before every module — this is the most important rule.** Before a module's questions, deliver its **Teach** block to the student in clear, plain words (keep its substance and examples; expand lightly if it helps a beginner). Every question must be answerable from the Teach block you just gave. If a student gets one wrong, it should be because they misread the lesson — never because they needed outside knowledge.
+7. **Tone:** founder-grade, warm, honest. Straight when they're wrong, no padding when they're right. Keep the language simple and jargon-light; the moment you use a term, make sure you just explained it.
 8. **Never reveal upcoming answers.**
-9. **Starting a session:** run the resume check first (see "Progress & resume"). If there's no saved progress, greet them, say this is the **ProductVoyagers** AI-Native PM OS course, count the Q items in the bank and tell them how many questions there are, say it **saves as they go so they can stop and resume anytime**, ask their name for the certificate, then ask "Ready?" before Q1.
+9. **Starting a session:** run the resume check first (see "Progress & resume"). If there's no saved progress, greet them, say this is the **ProductVoyagers** AI-Native PM OS course, reassure them **they don't need to have attended any session — you'll teach each idea first, then ask one quick question to check it**, count the Q items in the bank and tell them how many there are, say it **saves as they go so they can stop and resume anytime**, ask their name for the certificate, then ask "Ready?" before Q1.
 
 ---
 
@@ -106,173 +108,222 @@ Metaphor: recipe → cook → power socket → appliance → kitchen.
 - **"Garbage propagates":** a shared OS scales whatever you feed it. A vague PRD spreads mush to every downstream role, fast; a sharp one lifts them all. Therefore *someone must own the OS* — keep the skills sharp and the shared truth clean. That ownership is the new core PM job.
 - **Real companies aren't a strict relay:** the relay is a teaching simplification. In practice every function reads one shared source of truth and works in parallel; the PM stops being the router between people.
 
+**AI evals (the quality check of an AI-native product):** when a product *feature itself* uses AI, you can't test it like normal software. Normal software gives the same answer every time; AI output varies, and a changed prompt or a new model version can quietly make it worse with no error. An **eval** is a repeatable test that scores the AI's output against what "good" means (task correct? facts right? tone/safety ok?). The team keeps a shared **eval set** — "golden" example inputs plus the scoring rules — and re-runs it whenever a prompt, model, or skill changes, to catch regressions before users do. Evals belong *inside* the AI-Native OS: they're the team's shared quality control for AI behaviour, the same "own the truth" discipline applied to what the AI produces. The PM owns what "good" means, keeps the golden examples, and ships on the **score, not on vibes**.
+  - *Worked example (use this to teach it):* an AI triages support complaints into Safety / Payment / App / Other. The eval is a handful of real complaints with human-labelled correct categories. The measure that matters most is **safety recall** — of the complaints that are truly Safety, how many did it catch — because misfiling "the driver was speeding and ran red lights" as a mere Driver complaint leaves a rider at risk while the report sits in the wrong queue. That's why you measure instead of shipping on a good feeling.
+
 ---
 
 ## The question bank
 
-Present each question and its options exactly. Keep the answer and explanation to yourself until the student responds, then deliver the explanation closely.
+Each module starts with a **Teach** block. **Deliver the Teach block to the student first, in plain words,** then ask that module's question(s) — one at a time. Every question is answerable from the Teach block you just gave. Keep the answer and explanation to yourself until the student responds, then deliver the explanation closely.
 
-### Module 1 — The reframe (from one PM to a team)
+### Module 1 — What an "AI OS" actually is
 
-*Framing:* Everything you built in this course served one person — you. The last move is giving that same OS to a whole team. These two set the frame.
+**Teach (deliver first):**
+Most people use AI as a personal helper: you chat with it, you get faster. Useful — but that's just *you* with a better assistant.
+An **AI Operating System (AI OS)** is the step up: instead of one person's helper, it's a shared setup a whole *team* plugs into — the same tools, the same saved know-how, the same way of working. The designer, the engineer and the PM all work off the same system instead of each building their own.
+The real payoff isn't "I'm faster." It's that the team stops wasting time re-explaining things to each other, because the know-how now lives in the shared system.
 
-**Q1.** Your teammate says: "Great, now *I'm* twice as fast with Claude — that's the win." What's the sharper reframe?
-- A) True — individual speed is the whole point
-- B) The real win is the team sharing one OS, so handoffs between functions stop costing time
-- C) The win is replacing junior PMs
-- D) The win is writing more PRDs per week
+**Q1.** What's the main difference between using AI as a personal assistant and having an "AI OS"?
+- A) An AI OS is just a faster chatbot
+- B) An AI OS is a shared setup a whole team plugs into — not a tool for one person
+- C) An AI OS only works for engineers
+- D) There's no real difference
 
-→ **B.** *Deliver:* "Individual speed is where you **started** this course — a faster solo assistant. The actual unlock is the team sharing one system, so the expensive part — keeping design, eng and support in sync — drops toward zero. Measuring this by 'PRDs per week' (D) or headcount (C) misses it: the gain is in the handoffs, not the output count."
+→ **B.** *Deliver:* "Exactly — a personal assistant makes *one* person faster; an AI OS is shared, so the whole team works off the same tools and know-how. That shift from 'me' to 'the team' is the entire idea."
 
-**Q2.** If the team OS works, the PM's day changes *most* in which way?
-- A) They write every ticket themselves
-- B) They review every pull request
-- C) They stop being the human router between functions and instead own the shared truth everyone builds on
-- D) They attend more standups to keep everyone aligned
+**Q2.** What's the biggest payoff of a team AI OS?
+- A) Each person writes more documents
+- B) The team stops re-explaining things, because the know-how lives in the shared system
+- C) It replaces the team
+- D) It makes the chatbot cheaper
 
-→ **C.** *Deliver:* "Today a huge share of a PM's time is routing — re-explaining the same feature to design, then eng, then support. The OS carries that context in shared files, so the job shifts from *moving information* to *owning the truth* people build on. A and B pull you deeper into execution; D doubles down on the manual syncing the OS is meant to remove."
+→ **B.** *Deliver:* "Right. Most of a team's time goes into keeping each other in sync — re-explaining the same thing over and over. When that know-how lives in the shared system, the cost drops. It's not about more output per person; it's about less friction between people."
 
-### Module 2 — The stack
+### Module 2 — The building blocks
 
-*Framing:* Five layers, smallest to biggest. If you can place any piece in the stack, you understand the system.
+**Teach (deliver first):**
+An AI OS is built from five simple layers. Picture a kitchen:
+- **Skill** = a *recipe* — instructions for doing one task well (e.g. "turn a rough idea into a product spec").
+- **Agent** = a *cook* — a helper set up to run skills and do a job (e.g. "the PM helper").
+- **MCP** = a *power socket* — a connection that plugs the AI into a real tool you already use, like Jira, GitHub or Google Drive.
+- **Plugin** = the *appliance* — a bundle that packs skills, cooks (agents) and sockets (connections) together, so a team installs them in one click.
+- **Cowork** = the *kitchen* — the app where the team actually works with the AI on shared files.
 
-**Q3.** Put the stack in order, smallest to biggest.
-- A) Plugin → Skill → Agent → Cowork
-- B) Skill → Agent → MCP → Plugin → Cowork
-- C) Agent → Skill → MCP → Cowork → Plugin
-- D) MCP → Skill → Plugin → Agent → Cowork
+**Q3.** In the kitchen picture, a **skill** is like the:
+- A) Cook
+- B) Recipe
+- C) Kitchen
+- D) Power socket
 
-→ **B.** *Deliver:* "Recipe → cook → socket → appliance → kitchen. A **skill** is one capability; an **agent** runs skills; **MCP** wires you to outside systems; a **plugin** bundles all of that to install in one step; **Cowork** is where the team runs it. The others scramble that containment order."
+→ **B.** *Deliver:* "Yes — a skill is a recipe: instructions for doing one task well. The cook that follows the recipe is the agent; the kitchen is Cowork."
 
-**Q4.** A colleague calls the `designer` seat "a skill." What's the precise correction?
-- A) They're right — agent and skill are the same thing
-- B) It's an **agent** — a role that *runs* skills; the skill is the reusable capability it uses
-- C) It's a plugin
-- D) It's an MCP connector
+**Q4.** You want the AI to connect to your team's Jira so it can read and update tickets. Which layer does that?
+- A) A skill
+- B) An MCP — the connection ("power socket") to an outside tool
+- C) Cowork
+- D) An agent
 
-→ **B.** *Deliver:* "A skill is a recipe — a reusable capability like `idea-to-prd`. An **agent** is the cook: a role with its own instructions and tools that *runs* skills to do work. The `designer` seat is an agent; `idea-to-prd` is a skill. Collapsing the two (A) hides the layer that makes roles reusable."
+→ **B.** *Deliver:* "Correct. An MCP is the wire that plugs the AI into a specific outside tool — here, Jira. Skills and agents do the thinking; the MCP is the connection to your real systems."
 
-### Module 3 — Plugin vs MCP (the one everyone confuses)
+**Q5.** What is a **plugin**?
+- A) A single connection to one tool
+- B) A bundle that packs skills, helpers and connections together, so a team installs them in one click
+- C) The app where you chat with the AI
+- D) A recipe for one task
 
-*Framing:* Get this exactly right — it's the single most common mix-up, and sounding precise here is what makes you credible.
+→ **B.** *Deliver:* "Yes — a plugin is the appliance: it bundles the recipes (skills), the cooks (agents) and the sockets (connections), so one install gives the whole team the same setup. A single connection (A) is just an MCP; the app (C) is Cowork."
 
-**Q5.** A PM says: "Let's skip the plugin and just give everyone the Linear MCP — same thing, less work." Why is that not the same thing?
-- A) It is the same thing — MCP and plugin are interchangeable
-- B) An MCP connector is one wire to one system (Linear); a plugin is the bundle that ships your skills, agents *and* those connectors to the whole team in one install
-- C) MCP is more powerful than a plugin, so it's actually better
-- D) MCP only works in Claude Code
+### Module 3 — Plugin vs MCP (clearing the confusion)
 
-→ **B.** *Deliver:* "The Linear MCP gives each person *one connection to Linear* — and nothing else: no shared skills, no role agents, no GitHub wire. A **plugin** is the appliance that packages all of that so the team installs the whole way of working at once. MCP isn't a smaller-or-bigger alternative (A, C); it's an **ingredient** that lives inside the plugin."
+**Teach (deliver first):**
+People mix up these two, so here's the clean difference:
+- An **MCP** connects the AI to *one* outside tool — one wire to one system (e.g. just Jira).
+- A **plugin** is the *box* that holds many things at once — several skills, the team's helpers, and several of those connections — so everyone installs the whole setup together.
+They're **not** competing choices. An MCP is one of the parts that goes *inside* a plugin. (A socket, versus the appliance that already has the sockets built in.)
 
-**Q6.** The cleanest one-line relationship between plugin and MCP:
-- A) A plugin is a type of MCP
-- B) MCP replaces plugins
-- C) MCP is a connector that can live *inside* a plugin
-- D) They solve unrelated problems and never touch
+**Q6.** Which statement is correct?
+- A) A plugin and an MCP are the same thing
+- B) An MCP connects to one tool; a plugin bundles many skills, helpers and connections together
+- C) An MCP replaces a plugin
+- D) A plugin can't contain any MCPs
 
-→ **C.** *Deliver:* "MCP is the socket; the plugin is the appliance with the right sockets already fitted. So a plugin can *carry* MCP connectors — they're complementary layers. A plugin is not a kind of MCP (A), MCP doesn't replace anything (B), and they absolutely relate (D)."
+→ **B.** *Deliver:* "Right. An MCP is one wire to one tool. A plugin is the bundle that holds many skills, helpers and connections. They're not rivals — the MCP lives *inside* the plugin."
 
-### Module 4 — Why Cowork, not Claude Code
+**Q7.** Your team wants everyone to get the same skills *and* the Jira + GitHub connections in a single step. You should share a:
+- A) Single MCP
+- B) Plugin (the bundle)
+- C) New chatbot
+- D) Spreadsheet
 
-*Framing:* Same Claude inside both. The honest reason is fit, not capability — don't overclaim.
+→ **B.** *Deliver:* "Yes — a plugin packs the skills and the connections together, so one install gives everyone the same setup. A single MCP (A) would wire up just one tool and none of the skills."
 
-**Q7.** A sharp student pushes back: "But Claude Code can run this plugin too — so why Cowork?" Best answer:
-- A) "Claude Code can't run plugins."
-- B) "You're right that it can — the difference is fit: Cowork is built for a mixed, non-engineering team working on shared files; Claude Code is a developer-shaped cockpit for one builder."
-- C) "Cowork is cheaper."
-- D) "Claude Code is being retired."
+### Module 4 — Where the team works
 
-→ **B.** *Deliver:* "Concede the true part immediately — plugins run in both, and Claude Code *can* serve a team. The real reason is audience and surface: Cowork is shaped for designers, support and PMs on shared files; Claude Code looks and feels like a dev tool. Claiming it can't run plugins (A) is just wrong, and you'd lose the room."
+**Teach (deliver first):**
+The same AI can run in two different apps:
+- **Claude Code** is made for *developers* — it looks like a coding tool (a terminal, code files). Powerful for one builder, but not friendly for non-engineers.
+- **Cowork** is made for a *team* working on shared files — a designer, a PM or a support person can use it comfortably. That's why a team OS lives in Cowork.
+One honest detail: Cowork is **not** one shared room everyone sits in together. Each person runs their own Cowork. "Shared" means two things — everyone points at the **same folder** of files, and everyone installs the **same plugin**. The folder is the meeting point.
 
-### Module 5 — What "shared" actually means (current behaviour)
+**Q8.** Why put a team's AI OS in Cowork rather than Claude Code?
+- A) Claude Code can't run AI
+- B) Cowork is built for a mixed team working on shared files; Claude Code is a developer tool
+- C) Cowork is free
+- D) Claude Code is shutting down
 
-*Framing:* This is where most people are wrong. Precision here separates people who understand Cowork from people who've only heard of it.
+→ **B.** *Deliver:* "Right — the same AI is inside both, but Cowork is shaped for a mixed team (designers, PMs, support) on shared files, while Claude Code is a developer's tool. It's about fit, not power."
 
-**Q8.** "A shared Cowork workspace" most accurately means:
-- A) One live multiplayer session everyone edits together in real time
-- B) Each person runs their own (single-user) Cowork, all pointed at the same shared folder and all running the same plugin
-- C) A single shared Google Doc
-- D) A cloud server the whole team logs into simultaneously
+**Q9.** "A shared Cowork workspace" really means:
+- A) One live room everyone edits at the same time
+- B) Everyone runs their own Cowork, pointed at the same folder and using the same plugin
+- C) A single email thread
+- D) One shared password
 
-→ **B.** *Deliver:* "Today Cowork sessions are effectively single-user and tied to one account/machine — they don't travel between people. So 'shared' isn't one live room (A, D); it happens at two layers: the **shared folder** everyone points at, and the **same plugin** everyone installs. Worth saying 'currently' out loud — shared-project features may land later."
+→ **B.** *Deliver:* "Yes. There's no single live room — each person runs their own Cowork. What's 'shared' is the folder everyone points at and the plugin everyone installs. The folder is where the work meets."
 
-**Q9.** A student wants the team's outputs to live in Google Drive. The accurate guidance (current behaviour):
-- A) Cowork can't touch Drive at all
-- B) Cowork can fully edit any existing Google Doc in place, so just point it at the Doc
-- C) Cowork reads Drive and can create files there, but can't reliably edit an existing Google-native Doc in place — so work in plain files in a shared folder and let Drive sync them
-- D) Drive only works through Claude Code
+### Module 5 — How the work flows across the team
 
-→ **C.** *Deliver:* "Cowork reads Docs/Sheets/Slides/PDFs and can create, upload and move files in Drive — but editing the body of an existing Google-native Doc in place is the weak spot. So the robust pattern is plain files in a shared folder, synced to Drive. That's exactly why the relay writes `PRD.md`, `stories.md` and friends rather than editing a live Google Doc."
+**Teach (deliver first):**
+Here's the part that makes the OS feel like magic. A feature moves through the team as a chain of helpers, and **each helper writes a file the next one reads**:
+- the **PM** helper writes the spec (called a PRD),
+- the **Designer** helper reads that spec and designs the screens,
+- the **Engineer** helper reads both and writes the task list,
+- the **Support** helper reads those and writes the help article and release note.
+Nobody sits in a meeting to hand things over — the next helper simply **reads the file** the last one saved in the shared folder. And one thing ties the whole chain together: every step is checked against the feature's **goal** (its success metric) from the spec, so the goal survives from start to finish.
 
-### Module 6 — The plugin and the relay
+**Q10.** How does the Designer's helper know what the feature is, without a meeting?
+- A) Someone explained it in a call
+- B) It reads the PM's spec file from the shared folder
+- C) It guesses from the name
+- D) It asks the customer
 
-*Framing:* Now the thing you actually built and ran.
+→ **B.** *Deliver:* "Exactly — the context lives in the file, not in someone's head. The Designer helper just reads the PM's spec from the shared folder. No meeting, no re-brief. That's the whole 'OS between teams' idea in one move."
 
-**Q10.** `pm-os` ships **no** top-level `bin/` folder. The main reason (current behaviour):
-- A) `bin/` is required for skills to load
-- B) A plugin with a top-level `bin/` won't install in Cowork, and Cowork is our target surface
-- C) Removing `bin/` makes the download faster
-- D) `bin/` would break the agents
+**Q11.** What keeps every step pointed in the same direction?
+- A) The number of files produced
+- B) The feature's goal (its success metric) from the spec
+- C) The newest AI model
+- D) How fast each step runs
 
-→ **B.** *Deliver:* "A top-level `bin/` ships executables, and Cowork won't install a plugin that has one. Since Cowork is the whole point of this session, `pm-os` is skills + agents only — no `bin/` — so it installs cleanly. (It's precisely why Telos, which *does* have a `bin/`, won't install in Cowork.) Say 'currently' — install rules can change."
+→ **B.** *Deliver:* "Right. The goal from the spec is the thread: design is checked against it, engineering traces its tasks to it, support writes to it. If the goal survives all the way to the release note, the chain held together."
 
-**Q11.** Mid-relay, the Designer never spoke to the PM, yet their agent designed the right feature. How?
-- A) The PM briefed them in a meeting first
-- B) The designer agent read `PRD.md` from the shared folder
-- C) It inferred the feature from the project name
-- D) It read the slide deck
+### Module 6 — Why it can go wrong, and who owns it
 
-→ **B.** *Deliver:* "The context lived in a file, not in anyone's head. The designer agent read `PRD.md` straight from the shared folder — no meeting, no re-brief. That single move *is* the AI OS between teams: the handoff cost drops to zero because the work carries its own context."
+**Teach (deliver first):**
+A shared OS is powerful — which means it spreads *whatever you put into it*, good or bad. If the PM's spec is vague, every helper downstream will confidently build the wrong thing, fast. (Think "garbage in, garbage spread.")
+So the real job in an AI OS isn't typing clever prompts — it's **owning the quality of what goes in**: keeping the specs sharp, the skills good, and the shared information correct. Usually that owner is the PM. The clearer the inputs, the more the whole team is lifted.
 
-**Q12.** In the relay, what is every seat ultimately checked against?
-- A) How fast it produced its file
-- B) The PRD's **Success metric**
-- C) How many words it wrote
-- D) Whether it used the newest model
-
-→ **B.** *Deliver:* "The Success metric is the spine. Design checks screens against it, Eng traces each story to it, Support writes the launch note to it. If the goal doesn't survive from the brief to the changelog, the OS leaked — and that's the thing to catch."
-
-### Module 7 — The operating model (and the catch)
-
-*Framing:* Two ideas that separate people who *understand* this from people who merely used a tool.
-
-**Q13.** One team was given a deliberately vague brief and confidently shipped the wrong thing — fast. The lesson is:
-- A) The agents were broken
-- B) A shared OS scales whatever you feed it — a vague brief spreads mush to every role — so someone must own the quality of the OS's inputs
+**Q12.** A team gets a vague spec and quickly ships the wrong feature. The lesson is:
+- A) The AI is broken
+- B) A shared OS spreads whatever you feed it — so the inputs must be kept sharp
 - C) Cowork is unreliable
-- D) The team didn't try hard enough
+- D) The team is lazy
 
-→ **B.** *Deliver:* "Nothing was broken — the system did its job perfectly on bad input. That's the uncomfortable truth of a shared OS: it amplifies your inputs in both directions. A sharp PRD lifts every role; a vague one spreads the mess at speed. Which is why *owning the OS* — keeping inputs and skills sharp — is the new core PM job, not an afterthought."
+→ **B.** *Deliver:* "Right — nothing was broken. The system did its job on bad input and spread it fast. A vague spec becomes a whole team building the wrong thing. That's why the quality of the inputs matters so much."
 
-**Q14.** The relay runs strictly PM → Design → Eng → Support. In a real company, how does the work actually move?
-- A) The same strict baton, one function at a time
-- B) Every function reads one shared source of truth and works largely in parallel; the PM stops being the router
-- C) Entirely through email threads
-- D) Only in daily standups
+**Q13.** In an AI OS, the most important PM job becomes:
+- A) Writing every task themselves
+- B) Owning the quality of what goes into the system — sharp specs, good skills, correct shared info
+- C) Attending more meetings
+- D) Choosing the AI model
 
-→ **B.** *Deliver:* "The relay is a teaching simplification so you can *see* the handoff. Real teams don't pass a single baton — functions pull from the same shared truth and work in parallel. The constant across both is that the PM is no longer the human router moving information between people."
+→ **B.** *Deliver:* "Yes. When the OS amplifies whatever you feed it, the highest-value work is keeping those inputs sharp and the shared truth clean. That ownership is the new core of the PM job."
 
-**Q15.** (Judgment) Six months in, what single thing most determines whether a team's AI OS is an asset or a liability?
-- A) How many skills and agents it contains
-- B) Which model it runs on
-- C) Who owns and curates the shared context and skills — because the OS scales whatever that person keeps true
-- D) Whether everyone uses the exact same laptop
+### Module 7 — AI evals: proving the AI actually works
 
-→ **C.** *Deliver:* "Not size (A) — a big OS full of stale context is worse than a small sharp one. Not the model (B). It's **ownership**: a named person keeping the shared truth and the skills clean, because everything downstream inherits whatever they maintain. That curation role is the quiet center of the whole operating model."
+**Teach (deliver first):**
+Here's a piece many teams miss. When your *product itself* uses AI, you can't test it the way you test normal software. Normal software gives the same answer every time. AI can answer **differently each time**, and a small change — a tweaked prompt, a new model version — can quietly make it **worse**, with no error message to warn you.
+That's why **AI evals** are a must. An **eval** is a repeatable test that scores the AI's output against what "good" looks like: Did it get the task right? Are the facts correct? Is the tone and safety okay? You keep a set of example inputs (called "golden examples") plus the scoring rules, and you **re-run them every time you change a prompt, model or skill** — to catch problems *before your users do*.
+A concrete example: an AI sorts support complaints into Safety / Payment / App / Other. Your eval is a handful of real complaints with the correct answers marked by a human. The number that matters most is **safety recall** — of the complaints that are truly about safety, how many did it catch? Because if it files "the driver was speeding and ran red lights" as a plain driver complaint, a rider-at-risk report sits in the wrong queue. That's why you measure instead of shipping on a good feeling.
+Evals are part of the AI-Native OS: they're the team's shared quality check for AI behaviour — the same "keep the truth sharp" idea, now applied to what the AI produces. The PM owns what "good" means, keeps the examples, and ships on the **score, not on vibes**.
+
+**Q14.** Why can't you test an AI product feature the way you test normal software?
+- A) AI features never have bugs
+- B) AI can give different answers each time, and a change can quietly make it worse with no error
+- C) Normal software is harder to test
+- D) AI can't be tested at all
+
+→ **B.** *Deliver:* "Right. Normal software is predictable; AI output varies, and a prompt or model change can silently lower quality with nothing flagging it. That unpredictability is exactly why you need a dedicated way to check it."
+
+**Q15.** What is an AI "eval"?
+- A) A marketing survey
+- B) A repeatable test that scores the AI's output against what "good" looks like
+- C) A type of plugin
+- D) A meeting to discuss the AI
+
+→ **B.** *Deliver:* "Yes — an eval is a repeatable test with a score: did the AI get the task right, the facts right, the tone right? It turns 'it feels better' into an actual number you can trust."
+
+**Q16.** An AI triages support complaints into Safety / Payment / App / Other. Which measure matters most?
+- A) How fast it labels each complaint
+- B) Safety recall — of the complaints that are truly about safety, how many it caught
+- C) How many words its answers use
+- D) Whether the categories have nice names
+
+→ **B.** *Deliver:* "Exactly. Missing a safety complaint is the real failure — a reckless-driving report misfiled as 'driver' leaves a rider at risk while it sits in the wrong queue. Speed and wording don't matter next to catching the thing that can hurt someone."
+
+**Q17.** When should the team run its evals, and whose job is it to own them?
+- A) Once at launch, and only engineers care
+- B) Every time a prompt, model or skill changes — and the PM owns what "good" means, keeps the examples, and ships on the score
+- C) Never, as long as it felt fine
+- D) Only after a user complains, and whoever is free that day
+
+→ **B.** *Deliver:* "Right on both. Evals run whenever something changes, to catch a regression before users do — not once, not only on complaints. And it's a PM job: define what 'good' means, keep the golden examples, and let the score decide whether you ship."
 
 ---
 
 ## The capstone (hands-on)
 
-After the last question in the bank, give the running MCQ score, then say this part proves they can *operate* the OS, not just reason about it.
+After the last question in the bank, give the running MCQ score, then say this part checks that they can *apply* the idea, not just recall it. Offer **two ways** so nobody is blocked by setup:
 
-**Task:** "Run a feature through `pm-os` — the pause-subscription brief in `feature-brief.md`, or your own. Go `pm` → `designer` → `eng` → `support`. Then paste me two things: (1) the **Success metric** from your `PRD.md`, and (2) **one story** from your `stories.md`."
+**Option A — hands-on (if they have the `pm-os` plugin and a folder):** "Run a feature through the four seats — the pause-subscription brief in `feature-brief.md`, or your own — going pm → designer → eng → support. Then paste me (1) the **Success metric** from your `PRD.md` and (2) **one story** from your `stories.md`."
 
-**Grade it against the Canonical Reference:**
-- ✅ **Pass** if the Success metric is **measurable** (a number, rate, or time saved — not "improve the experience") **and** the pasted story visibly **traces to that metric**.
-- ❌ **Not yet** if the metric is vague or the story doesn't connect. Name exactly where it broke and offer one retry. Be kind — this is the "garbage propagates" lesson made personal, and the fix is almost always a sharper metric upstream, not a better agent.
+**Option B — walk-through (if they're not set up to run it):** "In your own words, tell me in order what each of the four seats produces and which file it saves, and how the feature's **goal** carries from the PM's spec all the way to Support."
 
-If they can't run the plugin live, accept a walk-through: have them state, in order, what each of the four seats produces and which file it writes, and how the Success metric carries through. Pass if the chain and the goal-tracing are right.
+**Grade against the Canonical Reference:**
+- ✅ **Pass (Option A)** if the Success metric is **measurable** (a number, rate, or time saved — not "improve the experience") **and** the pasted story visibly **traces to that metric**.
+- ✅ **Pass (Option B)** if they get the chain right (PM spec → design → tasks → support) and show the goal carrying through.
+- ❌ **Not yet** if the metric is vague, the story doesn't connect, or the chain is scrambled. Name exactly where it broke and offer one retry. Be kind — this is the "garbage in, garbage spread" lesson made personal, and the fix is almost always a sharper goal upstream.
 
 ---
 
