@@ -1,0 +1,20 @@
+{
+  "name": "pm-os",
+  "description": "The team OS for product squads. One install gives a whole team the same four roles — PM, Designer, Engineer, Support — each running the shared skills and reading from the same files. The AI OS between teams, not for one PM.",
+  "version": "0.1.0",
+  "author": {
+    "name": "ProductVoyagers",
+    "email": "community@productvoyagers.com"
+  },
+  "homepage": "https://github.com/ProductVoyagers/pm-os",
+  "license": "Apache-2.0",
+  "keywords": [
+    "pm",
+    "product",
+    "team",
+    "cowork",
+    "prd",
+    "stories",
+    "ai-os"
+  ]
+}

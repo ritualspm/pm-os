@@ -1,0 +1,14 @@
+{
+  "name": "pm-os",
+  "owner": {
+    "name": "ProductVoyagers",
+    "email": "community@productvoyagers.com"
+  },
+  "plugins": [
+    {
+      "name": "pm-os",
+      "source": "./",
+      "description": "The team OS for product squads — four roles (PM, Designer, Engineer, Support) on one shared set of skills and files."
+    }
+  ]
+}
