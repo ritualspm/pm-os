@@ -9,18 +9,17 @@ pm-os/
 ├── .claude-plugin/
 │   ├── plugin.json        ← the plugin manifest
 │   └── marketplace.json   ← makes this repo installable as a marketplace
-├── skills/
-│   ├── idea-to-prd/       ← PM's skill (reused from the course)
-│   ├── prd-to-stories/    ← Eng's skill (reused from the course)
-│   └── pm-os-course/      ← the interactive self-paced capstone + assessment
-└── agents/
-    ├── pm.md              ← PM seat        → writes PRD.md
-    ├── designer.md        ← Designer seat  → writes screens.html
-    ├── eng.md             ← Engineering seat → writes stories.md
-    └── support.md         ← Support/GTM seat → writes changelog.md + help.md
+└── skills/
+    ├── pm/                ← PM seat         → writes PRD.md
+    ├── designer/          ← Designer seat   → writes screens.html
+    ├── eng/               ← Engineering seat → writes stories.md
+    ├── support/           ← Support/GTM seat → writes changelog.md + help.md
+    ├── idea-to-prd/       ← PM's method (reused from the course)
+    ├── prd-to-stories/    ← Eng's method (reused from the course)
+    └── pm-os-course/      ← the interactive self-paced capstone + assessment
 ```
 
-No `bin/`, no executables — so it installs cleanly in **Claude Cowork** as well as Claude Code.
+Everything is a **skill** (no `bin/`, no subagents, no executables) — so the whole plugin works identically in **Claude Cowork** and Claude Code. In Cowork, type `/` to see the seats, or just ask ("run the PM seat", "start the pm-os course").
 
 ## How it works
 
