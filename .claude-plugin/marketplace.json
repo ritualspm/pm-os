@@ -1,15 +1,15 @@
 {
   "name": "pm-os",
   "owner": {
-    "name": "ProductVoyagers",
-    "email": "community@productvoyagers.com"
+    "name": "rituals.pm",
+    "email": "awafaey0@gmail.com"
   },
   "plugins": [
     {
       "name": "pm-os",
       "source": "./",
-      "author": "ProductVoyagers",
-      "description": "By ProductVoyagers — the team OS for product squads: four roles (PM, Designer, Engineer, Support) on one shared set of skills and files, plus an interactive AI-Native PM course that saves progress."
+      "author": "rituals.pm",
+      "description": "By rituals.pm — the team OS for product squads: four roles (PM, Designer, Engineer, Support) on one shared set of skills and files, plus an interactive AI-Native PM course that saves progress."
     }
   ]
 }

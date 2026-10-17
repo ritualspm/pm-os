@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./icon.png" width="96" alt="pm-os" />
   <h1>pm-os — the AI-Native PM Operating System</h1>
-  <p><strong>By ProductVoyagers.</strong> The team OS for product squads: one install gives a whole team the same roles, the same skills, and an interactive course — so AI stops being a tool for one PM and becomes the connective tissue across a team.</p>
+  <p><strong>By rituals.pm.</strong> The team OS for product squads: one install gives a whole team the same roles, the same skills, and an interactive course — so AI stops being a tool for one PM and becomes the connective tissue across a team.</p>
 </div>
 
 ---
@@ -97,7 +97,7 @@ When your **product itself** uses AI, you can't test it like normal software: th
 Cowork installs plugins through the **Customize** UI — not a slash command.
 
 1. Sidebar → **Customize** → **Plugins** → **+ Add** → **Add marketplace**
-2. Paste: `https://github.com/ProductVoyagers/pm-os` → **Sync**
+2. Paste: `https://github.com/ritualspm/pm-os` → **Sync**
 3. Click **Add** on the `pm-os` plugin. (It saves to your account and follows you across chat, Cowork, and Claude Code.)
 
 Then, in a session, type **`/`** to see the seats and the course, or just ask:
@@ -108,5 +108,5 @@ Then, in a session, type **`/`** to see the seats and the course, or just ask:
 
 ## Author & license
 
-Built and maintained by **ProductVoyagers** · community@productvoyagers.com
+Built and maintained by **rituals.pm** · awafaey0@gmail.com
 Licensed under **Apache-2.0**.
