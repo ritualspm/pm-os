@@ -2,7 +2,7 @@
 name: PM OS Course
 description: The self-paced, interactive AI-Native PM Operating System course and assessment, by ProductVoyagers. Presents one scenario question at a time, the student selects an answer, you grade and deliver a pre-written authoritative explanation, and you SAVE progress to a file in the folder after every answer so the student can stop and resume. Ends in a hands-on capstone and a pass/certificate. Use when a student says "start the course", "pm-os course", "assess me", or runs /pm-os-course.
 icon: 🎓
-version: 0.5.0
+version: 0.6.0
 ---
 
 # PM OS Course — the AI-Native PM Operating System
@@ -110,6 +110,11 @@ Metaphor: recipe → cook → power socket → appliance → kitchen.
 
 **AI evals (the quality check of an AI-native product):** when a product *feature itself* uses AI, you can't test it like normal software. Normal software gives the same answer every time; AI output varies, and a changed prompt or a new model version can quietly make it worse with no error. An **eval** is a repeatable test that scores the AI's output against what "good" means (task correct? facts right? tone/safety ok?). The team keeps a shared **eval set** — "golden" example inputs plus the scoring rules — and re-runs it whenever a prompt, model, or skill changes, to catch regressions before users do. Evals belong *inside* the AI-Native OS: they're the team's shared quality control for AI behaviour, the same "own the truth" discipline applied to what the AI produces. The PM owns what "good" means, keeps the golden examples, and ships on the **score, not on vibes**.
   - *Worked example (use this to teach it):* an AI triages support complaints into Safety / Payment / App / Other. The eval is a handful of real complaints with human-labelled correct categories. The measure that matters most is **safety recall** — of the complaints that are truly Safety, how many did it catch — because misfiling "the driver was speeding and ran red lights" as a mere Driver complaint leaves a rider at risk while the report sits in the wrong queue. That's why you measure instead of shipping on a good feeling.
+  - *Two types of evals:* **Model evals** test the underlying model's general ability and safety (generic benchmarks — how a model-maker measures a model, and how you choose which model to build on). **Product evals** test whether *your specific feature* does *its* job well on *your* real tasks and data (your rubric, your golden examples). In a company's AI OS, product evals are the PM's lane; the complaint-triage example is a product eval.
+
+**When to use each surface:** a **quick chat** fits a one-off question or a draft you'll copy out (no files, no team). **Cowork** fits work that spans files in a folder, takes several steps, or is shared with the team — the home of the OS. **Claude Code** fits writing or running code. Rule of thumb: quick answer → chat; file/team work → Cowork; code → Claude Code.
+
+**Shared-workspace best practices:** one shared folder as the single source of truth (working files live there, not on private desktops); everyone installs the same plugin so the team runs the same skills; keep inputs (specs/goals) sharp because the OS amplifies them; keep shared info fresh because a stale file spreads mistakes; a human reviews AI output and evals gate anything the AI does inside the product; and remember a "shared workspace" is the shared folder + shared plugin, not a live multiplayer room.
 
 ---
 
@@ -309,6 +314,106 @@ Evals are part of the AI-Native OS: they're the team's shared quality check for 
 - D) Only after a user complains, and whoever is free that day
 
 → **B.** *Deliver:* "Right on both. Evals run whenever something changes, to catch a regression before users do — not once, not only on complaints. And it's a PM job: define what 'good' means, keep the golden examples, and let the score decide whether you ship."
+
+**Q18.** There are **two kinds** of AI evals. Which pairing is right?
+- A) They're the same thing with two names
+- B) **Model evals** check the raw model's general ability and safety; **product evals** check whether *your* feature does *its* real job well
+- C) Model evals check your feature; product evals check the raw model
+- D) Only engineers ever use product evals
+
+→ **B.** *Deliver:* "Model evals ask 'is the underlying model capable and safe in general?' — that's the model-maker's turf, and how you choose which model to build on. Product evals ask 'does *our* feature do *its* job well on *our* real tasks?' — and that's the one a PM owns. The complaint-triage check earlier was a product eval."
+
+### Module 8 — When to reach for Cowork
+
+**Teach (deliver first):**
+Not everything needs the full OS. Pick the surface by the job:
+- A **quick chat** is best for a one-off question or a quick draft you'll copy out — no files, no team.
+- **Cowork** is best when the work spans **files in a folder**, takes **several steps**, or is **shared with the team** — that's where the OS lives.
+- **Claude Code** is for people actually **writing or running code**.
+Simple rule: quick answer → chat; real file/team work → Cowork; code → Claude Code.
+
+**Q19.** You need a quick one-off rewrite of a paragraph — nothing saved, no files, no team. Best surface?
+- A) A quick chat
+- B) Cowork with a shared folder
+- C) Claude Code
+- D) A video call
+
+→ **A.** *Deliver:* "Right — for a throwaway, no-files task, a quick chat is the fastest path. Spinning up Cowork and a folder would be overkill. Save Cowork for work that lives in files or is shared."
+
+**Q20.** Your squad has to run a feature through several steps, producing files everyone shares. Best surface?
+- A) A quick chat
+- B) Email threads
+- C) Cowork
+- D) A slide deck
+
+→ **C.** *Deliver:* "Exactly — multiple steps, real files, shared across the team: that's the home turf of Cowork and the OS. A quick chat can't carry files across the team the way the shared folder does."
+
+**Q21.** When is **Claude Code** the right pick rather than Cowork?
+- A) For any kind of team work
+- B) When you're writing or running code
+- C) For quick one-off questions
+- D) It's never the right pick
+
+→ **B.** *Deliver:* "Right — Claude Code is the developer surface, for writing and running code. For a mixed team working on shared files, Cowork is the fit."
+
+**Q22.** What's the clearest sign you should move from a quick chat *into* Cowork?
+- A) The answer is a single sentence
+- B) You're just curious about something
+- C) The work spans several files or steps, or needs to be saved and shared in a folder
+- D) You want the fastest possible reply
+
+→ **C.** *Deliver:* "Yes — the moment work turns into multiple files or steps, or something the team needs to share, that's your cue to move into Cowork. One-liners and quick curiosities stay in chat."
+
+### Module 9 — Shared workspace & best practices
+
+**Teach (deliver first):**
+A few habits make a shared AI OS work well:
+- **One shared folder** everyone points at — that's the single source of truth; working files live there, not on private desktops.
+- **Everyone installs the same plugin**, so the whole team runs the same skills and connections.
+- **Keep the inputs sharp** — clear specs and goals. The OS amplifies whatever you feed it, so sharpening inputs lifts the whole team at once.
+- **Keep shared info fresh** — a stale spec left in the folder spreads mistakes to everyone who builds on it.
+- **A human reviews AI output**, and if the AI is *in the product*, you run evals. People still decide.
+- Remember: a "shared workspace" is the **shared folder + shared plugin** — not one live room everyone edits together.
+
+**Q23.** Best way to make sure the whole team runs the same skills and connections?
+- A) Everyone writes their own prompts
+- B) Everyone installs the same plugin
+- C) Email the instructions around
+- D) Let each person pick their own tools
+
+→ **B.** *Deliver:* "Right — the plugin is how a whole team gets the same skills and connections in one install. Prompts and emailed instructions drift; the plugin keeps everyone on the same setup."
+
+**Q24.** A teammate leaves an outdated spec in the shared folder. What's the risk?
+- A) Nothing — the AI ignores old files
+- B) Only that one person is affected
+- C) The stale info gets amplified across everyone who builds on it
+- D) The folder deletes itself
+
+→ **C.** *Deliver:* "Exactly — this is 'garbage in, garbage spread' again. Because everyone builds on the shared folder, one stale spec quietly misleads the whole chain. Keeping shared info fresh is part of owning the OS."
+
+**Q25.** Good practice before trusting the AI's output inside the OS?
+- A) Ship it right away to save time
+- B) A human reviews it — and if the AI is in the product, run evals
+- C) Assume it's right if it sounds confident
+- D) Only check it after customers complain
+
+→ **B.** *Deliver:* "Right — a human stays in the loop, and when the AI is part of the product you measure it with evals rather than trusting a confident tone. People decide; the OS drafts."
+
+**Q26.** What's the fastest way to lift the whole team's output quality in an AI OS?
+- A) Buy more AI seats
+- B) Add more steps to every task
+- C) Sharpen the inputs — clearer specs and goals the OS runs on
+- D) Switch to a new model every week
+
+→ **C.** *Deliver:* "Yes — because the OS amplifies its inputs, a sharper spec lifts every downstream step at once. More seats, more steps, or model-hopping don't fix a vague input."
+
+**Q27.** Which belief about a "shared Cowork workspace" should you avoid?
+- A) That everyone installs the same plugin
+- B) That everyone points at the same folder
+- C) That it's a single live room everyone edits together in real time
+- D) That the folder is the meeting point
+
+→ **C.** *Deliver:* "Right — that's the myth. Cowork isn't one live multiplayer room; 'shared' means the same folder and the same plugin. The other three are exactly how sharing really works."
 
 ---
 

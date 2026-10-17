@@ -1,7 +1,7 @@
 {
   "name": "pm-os",
   "description": "By ProductVoyagers — the team OS for product squads. One install gives a whole team the same four roles (PM, Designer, Engineer, Support), the shared skills, and an interactive AI-Native PM course. The AI OS between teams, not for one PM.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "icon": "./icon.png",
   "author": {
     "name": "ProductVoyagers",

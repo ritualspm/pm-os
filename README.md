@@ -1,45 +1,112 @@
-# pm-os — the team OS for product squads
+<div align="center">
+  <img src="./icon.png" width="96" alt="pm-os" />
+  <h1>pm-os — the AI-Native PM Operating System</h1>
+  <p><strong>By ProductVoyagers.</strong> The team OS for product squads: one install gives a whole team the same roles, the same skills, and an interactive course — so AI stops being a tool for one PM and becomes the connective tissue across a team.</p>
+</div>
 
-One install gives a whole team the same four roles, the same skills, and a shared way of working. It's the point of the final AI PM Builder session: **an AI OS between teams, not a smarter assistant for one PM.**
+---
 
-## What's inside
+## What this is
+
+Most people use AI as a **personal assistant** — one person gets faster. **pm-os** is the step up: a shared **operating system** a whole product team plugs into. The designer, the engineer, the PM and support all work off the same tools, the same saved know-how, and the same shared files — so the team stops wasting time re-explaining things to each other.
+
+One install gives every teammate:
+- **Four role "seats"** that pass work to each other through shared files — no handoff meetings.
+- **Two reusable skills** (idea → PRD, PRD → stories).
+- **An interactive, self-paced course + assessment** that teaches and certifies the whole model.
+
+It's **all skills** (no executables), so it installs cleanly in **Claude Cowork** as well as Claude Code.
+
+---
+
+## The AI-Native PM OS — focus areas
+
+An AI-Native PM works across a map of jobs, each with AI tools, all orbiting a central workspace (Claude Desktop / Cursor):
+
+| Focus area | What it covers | Example tools |
+|---|---|---|
+| **Development & Team** | tickets, code, delivery | Jira, GitHub |
+| **Research** | discovery, synthesis | Manus, Perplexity |
+| **Prototypes** | build to feel it | Replit, Lovable |
+| **Design** | screens, critique vs. goals | Figma, Telos |
+| **Content & Image** | copy, visuals | Nano Banana |
+| **Documentation & Knowledge** | shared truth | Google Drive, Confluence, Notion |
+| **Analytics** | behaviour, signal | Clarity |
+| **(Center) Workspace** | where it all runs | Claude Desktop, Cursor |
+
+`pm-os` is the connective layer that makes a slice of this map **shared and repeatable** for a team — starting with the PM → Design → Eng → Support flow.
+
+---
+
+## What's inside the plugin
 
 ```
 pm-os/
-├── .claude-plugin/
-│   ├── plugin.json        ← the plugin manifest
-│   └── marketplace.json   ← makes this repo installable as a marketplace
+├── .claude-plugin/{plugin.json, marketplace.json}   ← manifest + marketplace
+├── icon.png
 └── skills/
-    ├── pm/                ← PM seat         → writes PRD.md
-    ├── designer/          ← Designer seat   → writes screens.html
-    ├── eng/               ← Engineering seat → writes stories.md
-    ├── support/           ← Support/GTM seat → writes changelog.md + help.md
-    ├── idea-to-prd/       ← PM's method (reused from the course)
-    ├── prd-to-stories/    ← Eng's method (reused from the course)
-    └── pm-os-course/      ← the interactive self-paced capstone + assessment
+    ├── pm/            ← PM seat        → writes PRD.md
+    ├── designer/      ← Designer seat  → writes screens.html (+ goal critique)
+    ├── eng/           ← Engineering seat → writes stories.md
+    ├── support/       ← Support/GTM seat → writes changelog.md + help.md
+    ├── idea-to-prd/   ← reusable method: idea → PRD
+    ├── prd-to-stories/← reusable method: PRD → stories
+    └── pm-os-course/  ← interactive course + assessment (saves progress)
 ```
 
-Everything is a **skill** (no `bin/`, no subagents, no executables) — so the whole plugin works identically in **Claude Cowork** and Claude Code. In Cowork, type `/` to see the seats, or just ask ("run the PM seat", "start the pm-os course").
+**How the seats work (the relay):** each seat reads the previous seat's file from the shared folder and writes the next one. A feature crosses four functions with **no meeting**, and every seat is checked against the PRD's **success metric**, so the goal survives from the brief to the release note.
 
-## How it works
+---
 
-Every role reads the previous role's file from the **shared folder** and writes the next one. The context lives in the files, not in anyone's head — so a feature goes PM → Design → Eng → Support **without a single hand-off meeting.**
+## The course — modules & focus
 
-The thread that runs through all four roles: every seat is checked against the PRD's **Success metric**. The OS only works if the goal survives from the brief all the way to the launch note.
+Run it solo in Cowork: say **"start the pm-os course"**. It teaches each idea in plain language, asks one question, grades and explains, **saves progress to your folder** so you can stop and resume, then ends in a hands-on capstone and a certificate. No prior session required.
 
-## Install
+| # | Module | What it lands |
+|---|---|---|
+| 1 | What an "AI OS" actually is | personal assistant vs. shared team system |
+| 2 | The building blocks | skill, agent, MCP, plugin, Cowork (the kitchen) |
+| 3 | Plugin vs MCP | the most-confused pair, cleared up |
+| 4 | Where the team works | Cowork vs Claude Code; what "shared" means |
+| 5 | How the work flows | the relay; context carried in files |
+| 6 | Why it goes wrong & who owns it | "garbage in, garbage spread"; PM owns inputs |
+| 7 | **AI evals** | why evals are a must; model vs product evals |
+| 8 | When to reach for Cowork | chat vs Cowork vs Claude Code |
+| 9 | Shared workspace & best practices | one folder, same plugin, sharp inputs, human review |
 
-```
-/plugin marketplace add ProductVoyagers/pm-os
-/plugin install pm-os
-```
+---
 
-Then open your team's shared folder and talk to a role: `pm, turn this brief into a PRD`.
+## Evals — the AI OS of quality in a company
 
-## The self-paced capstone
+When your **product itself** uses AI, you can't test it like normal software: the same input can give different answers, and a tweaked prompt or a new model version can quietly make it worse with **no error**. So an AI-native company builds **evals** into its OS — repeatable tests that **score** the AI's output against what "good" means, re-run every time a prompt, model, or skill changes, to catch regressions **before users do**.
 
-Once installed, a student can run the whole course solo in Cowork — just say **"start the pm-os course"**. It's interactive: a question comes up, they answer, Claude grades and explains, tracks the score across 7 short modules, then runs a hands-on capstone (run a brief through the OS) and issues a pass / certificate they can screenshot. All of it is built from the session's own material.
+**Two types of evals:**
 
-## The caveat worth saying out loud
+| | **Model evals** | **Product evals** |
+|---|---|---|
+| **Question** | Is the underlying model capable & safe in general? | Does *our* feature do *its* job well on *our* real tasks? |
+| **Who** | model-makers; and you, when choosing a model | the product team — **the PM's lane** |
+| **Example** | generic benchmarks | "did our complaint-triage catch the safety complaints?" |
 
-A shared OS scales whatever you feed it — including your mistakes. A vague PRD spreads mush to every role; a sharp one lifts all of them. That's why someone has to **own the OS**: keep the skills sharp, keep the shared truth clean. That ownership is the new PM job.
+**Why it's a must (the example):** an AI that sorts support complaints into Safety / Payment / App / Other must be measured on **safety recall** — of the truly-safety complaints, how many did it catch? Misfiling *"the driver was speeding and ran red lights"* as a plain driver complaint leaves a rider at risk while the report sits in the wrong queue. **You measure instead of shipping on vibes.** The PM owns what "good" means, keeps the golden examples, and ships on the score.
+
+---
+
+## Install (in Claude Cowork)
+
+Cowork installs plugins through the **Customize** UI — not a slash command.
+
+1. Sidebar → **Customize** → **Plugins** → **+ Add** → **Add marketplace**
+2. Paste: `https://github.com/ProductVoyagers/pm-os` → **Sync**
+3. Click **Add** on the `pm-os` plugin. (It saves to your account and follows you across chat, Cowork, and Claude Code.)
+
+Then, in a session, type **`/`** to see the seats and the course, or just ask:
+- `run the PM seat on the brief in this folder` → then designer → eng → support
+- `start the pm-os course`
+
+---
+
+## Author & license
+
+Built and maintained by **ProductVoyagers** · community@productvoyagers.com
+Licensed under **Apache-2.0**.
