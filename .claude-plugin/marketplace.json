@@ -8,7 +8,8 @@
     {
       "name": "pm-os",
       "source": "./",
-      "description": "The team OS for product squads — four roles (PM, Designer, Engineer, Support) on one shared set of skills and files."
+      "author": "ProductVoyagers",
+      "description": "By ProductVoyagers — the team OS for product squads: four roles (PM, Designer, Engineer, Support) on one shared set of skills and files, plus an interactive AI-Native PM course that saves progress."
     }
   ]
 }
